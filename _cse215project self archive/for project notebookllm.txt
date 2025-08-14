@@ -1,0 +1,46 @@
+https://www.youtube.com/watch?v=FLkOX4Eez6o
+https://www.youtube.com/watch?v=S_JN7zO12H4
+https://www.youtube.com/watch?v=QGGE0WsUslc
+https://www.youtube.com/watch?v=7LxWQIDOzyE
+
+
+
+
+
+Key JavaFX-Specific Enhancements
+Reactive UI Architecture:
+
+JavaFX properties (SimpleDoubleProperty, ObservableList) enable automatic UI updates when model data changes (e.g., wear percentage updates trigger real-time dashboard refresh).
+
+Example: DashboardPane binds wearColumn to IndustrialItem.wearPercentage for zero-glue synchronization.
+
+Advanced Visualization:
+
+WarehouseCanvas uses JavaFX Canvas and GraphicsContext for high-performance 2D rendering of industrial components, forklifts, and hazard effects (e.g., chemical leaks visualized as animated red circles).
+
+Time Simulation:
+
+TimeManager replaces Swing Timer with JavaFX Timeline, supporting:
+
+Real-time mode: Timeline with KeyFrame advancing time hourly.
+
+Manual jumps: Programmatic time increments via incrementTime(hours).
+
+Exception Handling UX:
+
+SafetyViolationException triggers JavaFX Alert dialogs with detailed error messages and visual cues (e.g., flashing items in WarehouseCanvas).
+
+Modern Reporting:
+
+Compliance reports export via JavaFX FileChooser; TableView displays live OSHA audit data with CSS styling.
+
+Why JavaFX Enhances the Proposal
+Performance: Canvas rendering handles 1000+ items efficiently vs. Swing’s overhead.
+
+Maintainability: FXML support (optional) separates UI design from business logic.
+
+User Experience: CSS styling, animations, and property binding create a polished training simulator.
+
+Industry Alignment: Mirrors modern industrial SCADA systems using reactive architectures.
+
+(All academic and safety goals remain unchanged from original proposal.)
