@@ -16,6 +16,7 @@ https://www.youtube.com/watch?v=Bg5VcIL2IhY
 https://www.youtube.com/watch?v=GbzKr46VvD0
 treeview (can be used for our program):
 https://www.youtube.com/watch?v=SvmSNbXQSnQ
+tableview - with auto spreedsheet like javafx sorting based on filter and drag column ahead feature (even better since loads of data have) 
 
 Key JavaFX-Specific Enhancements
 Reactive UI Architecture:
@@ -54,6 +55,7 @@ User Experience: CSS styling, animations, and property binding create a polished
 Industry Alignment: Mirrors modern industrial SCADA systems using reactive architectures.
 
 (All academic and safety goals remain unchanged from original proposal.)
+
 
 
 
