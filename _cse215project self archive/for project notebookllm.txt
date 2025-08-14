@@ -2,10 +2,11 @@ https://www.youtube.com/watch?v=FLkOX4Eez6o
 https://www.youtube.com/watch?v=S_JN7zO12H4
 https://www.youtube.com/watch?v=QGGE0WsUslc
 https://www.youtube.com/watch?v=7LxWQIDOzyE
-
-
-
-
+https://www.youtube.com/watch?v=SpL3EToqaXA
+https://www.youtube.com/watch?v=HFAsMWkiLvg
+https://www.youtube.com/watch?v=ZuHcl5MmRck
+https://www.youtube.com/watch?v=WJ16Mz_rHGE
+https://www.youtube.com/watch?v=cwJK_WpseKQ
 
 Key JavaFX-Specific Enhancements
 Reactive UI Architecture:
