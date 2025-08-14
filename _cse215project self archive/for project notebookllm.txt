@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=JWxnoe6APUY
 https://www.youtube.com/watch?v=K3CenJ2bMok
 https://www.youtube.com/watch?v=WZGyP57IH6M
 https://www.youtube.com/watch?v=Bg5VcIL2IhY
+https://www.youtube.com/watch?v=GbzKr46VvD0
 
 Key JavaFX-Specific Enhancements
 Reactive UI Architecture:
@@ -51,6 +52,7 @@ User Experience: CSS styling, animations, and property binding create a polished
 Industry Alignment: Mirrors modern industrial SCADA systems using reactive architectures.
 
 (All academic and safety goals remain unchanged from original proposal.)
+
 
 
 
