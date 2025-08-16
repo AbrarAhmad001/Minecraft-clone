@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.InventoryController">
+    <top>
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="switchToGeneratorButton" text="Switch to Generator" onAction="#switchTogenerator"/>
+            <Button fx:id="quitButton" text="Quit" onAction="#quitApp"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="inventoryTable">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Item Name"/>
+                <TableColumn fx:id="wearColumn" text="Wear %"/>
+                <TableColumn fx:id="dateColumn" text="Date Added"/>
+                <TableColumn fx:id="maintenanceColumn" text="Times Maintained"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="maintenanceButton" text="Perform Maintenance" onAction="#performMaintenance"/>
+        </HBox>
+    </bottom>
+</BorderPane>
