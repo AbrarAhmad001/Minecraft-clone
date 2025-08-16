@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.MaintenanceController" 
+      alignment="CENTER" spacing="20" prefWidth="400" prefHeight="300">
+    
+    <Label text="Maintenance Verification" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+    
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Enter the code below:"/>
+        <Label fx:id="captchaLabel" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextField fx:id="inputField" promptText="Type the code here"/>
+        <Button fx:id="submitButton" text="Submit" onAction="#submit" defaultButton="true"/>
+    </VBox>
+    
+    <Label fx:id="messageLabel" style="-fx-text-fill: red;"/>
+</VBox>

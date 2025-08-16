@@ -1,0 +1,80 @@
+package application;
+
+import javafx.beans.property.*;
+
+import java.util.Random;
+
+public class IndustrialItem {
+
+    private final SimpleStringProperty displayName;
+    private final SimpleDoubleProperty wearPercentage;
+    private final SimpleStringProperty dateAdded;
+    private final SimpleIntegerProperty timesMaintained;
+    private final String type;
+    private boolean isDestroyed = false;  // Track destruction status
+
+    private final Random rand = new Random();
+
+    public IndustrialItem(String name, String type) {
+        this.displayName = new SimpleStringProperty(name);
+        this.type = type;
+        // Start with random wear between 50% - 85%
+        this.wearPercentage = new SimpleDoubleProperty(50 + rand.nextInt(36));
+        this.dateAdded = new SimpleStringProperty(java.time.LocalDate.now().toString());
+        this.timesMaintained = new SimpleIntegerProperty(0);
+    }
+
+    public String getDisplayName() { return displayName.get(); }
+    public SimpleStringProperty displayNameProperty() { return displayName; }
+
+    public double getWearPercentage() { return wearPercentage.get(); }
+    public SimpleDoubleProperty wearPercentageProperty() { return wearPercentage; }
+
+    public String getDateAdded() { return dateAdded.get(); }
+    public SimpleStringProperty dateAddedProperty() { return dateAdded; }
+
+    public int getTimesMaintained() { return timesMaintained.get(); }
+    public SimpleIntegerProperty timesMaintainedProperty() { return timesMaintained; }
+
+    public String getType() { return type; }
+
+    // Increase wear based on type
+    public void increaseWearPerSecond() {
+        double increment;
+        switch (type) {
+            case "Engine": increment = 0.1; break;
+            case "Chemical": increment = 0.15; break;
+            case "Electronics": increment = 0.08; break;
+            default: increment = 0.1;
+        }
+        
+        double newWear = Math.min(100, wearPercentage.get() + increment);
+        wearPercentage.set(newWear);
+        
+        // Check if wear reached 100% from normal progression
+        if (newWear >= 100 && !isDestroyed) {
+            isDestroyed = true;
+            RewardLogger.logDestruction("system", displayName.get(), type);
+        }
+    }
+
+    public void reduceWear(double percent) {
+        wearPercentage.set(Math.max(0, wearPercentage.get() - percent));
+        timesMaintained.set(timesMaintained.get() + 1);
+    }
+
+    public void increaseWear(double percent) {
+        double newWear = Math.min(100, wearPercentage.get() + percent);
+        wearPercentage.set(newWear);
+        
+        // Check if wear reached 100% from maintenance failure
+        if (newWear >= 100 && !isDestroyed) {
+            isDestroyed = true;
+            RewardLogger.logDestruction("system", displayName.get(), type);
+        }
+    }
+
+    public boolean isCritical() {
+        return wearPercentage.get() >= 100;
+    }
+}
